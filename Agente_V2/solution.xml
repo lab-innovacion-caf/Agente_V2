@@ -1,0 +1,124 @@
+<ImportExportXml version="9.2.25081.234" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25081.234" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25081.00234">
+  <SolutionManifest>
+    <UniqueName>PruebaRaymondconChris</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="PruebaRaymondconChris" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.1</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>innovacion</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Laboratorio innovación" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Laboratorio de innovacion" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>inn</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>82649</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="29" id="{47222262-d176-060f-5ae1-1c11364e1cd6}" behavior="0" />
+      <RootComponent type="29" id="{89b1e6dc-00d2-6ff1-d42e-277226d35276}" behavior="0" />
+      <RootComponent type="29" id="{992712fe-d44c-c668-40e7-2913399cb10d}" behavior="0" />
+      <RootComponent type="29" id="{9fea2ace-d688-f011-b4cc-000d3a8ba5a9}" behavior="0" />
+      <RootComponent type="401" id="{5d96603e-3b4c-4d74-b14e-23ddeef61587}" behavior="0" />
+      <RootComponent type="401" id="{a38b7315-59b4-40a3-a6c4-9e8f78c22364}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="cr59f_procesarExcelDeObjetivos.shared_excelonlinebusiness.shared-excelonlinebu-631d296f-ce7f-423e-a824-15cfe84c1fbd" solution="Active" id.connectionreferencelogicalname="cr59f_procesarExcelDeObjetivos.shared_excelonlinebusiness.shared-excelonlinebu-631d296f-ce7f-423e-a824-15cfe84c1fbd" />
+        <Dependent type="29" displayName="ODS ODESIA" id="{992712fe-d44c-c668-40e7-2913399cb10d}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_817a0" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_817a0" />
+        <Dependent type="29" displayName="IAD ODESIA v2" id="{47222262-d176-060f-5ae1-1c11364e1cd6}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_817a0" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_817a0" />
+        <Dependent type="29" displayName="ODS ODESIA v2" id="{9fea2ace-d688-f011-b4cc-000d3a8ba5a9}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_88587" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_88587" />
+        <Dependent type="29" displayName="IAD ODESIA" id="{89b1e6dc-00d2-6ff1-d42e-277226d35276}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_88587" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_88587" />
+        <Dependent type="29" displayName="ODS ODESIA" id="{992712fe-d44c-c668-40e7-2913399cb10d}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedexcelonlinebusiness_451cf" solution="Active" id.connectionreferencelogicalname="new_sharedexcelonlinebusiness_451cf" />
+        <Dependent type="29" displayName="IAD ODESIA v2" id="{47222262-d176-060f-5ae1-1c11364e1cd6}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedexcelonlinebusiness_451cf" solution="Active" id.connectionreferencelogicalname="new_sharedexcelonlinebusiness_451cf" />
+        <Dependent type="29" displayName="IAD ODESIA" id="{89b1e6dc-00d2-6ff1-d42e-277226d35276}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="new_sharedexcelonlinebusiness_451cf" solution="Active" id.connectionreferencelogicalname="new_sharedexcelonlinebusiness_451cf" />
+        <Dependent type="29" displayName="ODS ODESIA v2" id="{9fea2ace-d688-f011-b4cc-000d3a8ba5a9}" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

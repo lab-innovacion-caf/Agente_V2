@@ -1,0 +1,148 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "impersonation": {},
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_88587"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "cr59f_procesarExcelDeObjetivos.shared_excelonlinebusiness.shared-excelonlinebu-631d296f-ce7f-423e-a824-15cfe84c1fbd"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "Raw",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Run_a_prompt": {
+          "runAfter": {
+            "Join": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "recordId": "118caa24-826e-403c-996e-128ae3a6a91f",
+              "item/requestv2/Text_20input": "@body('Join')",
+              "item/requestv2/Raw": "@triggerBody()?['text']"
+            },
+            "host": {
+              "apiId": "providers/Microsoft.ProcessSimple/operationGroups/aibuilder",
+              "operationId": "aibuilderpredict_customprompt",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        },
+        "List_rows_present_in_a_table": {
+          "runAfter": {},
+          "metadata": {
+            "01J5KQM5QOFKSYPBZCTFBLQXRDN45FGLQR": "/Copilot/ODESIA/ODS.xlsx",
+            "tableId": "{D4281D37-AA24-4141-80F6-95C9765768CC}"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "source": "sites/cafbanco.sharepoint.com,fec97da1-21b8-4a0e-97e0-6507074a1bf3,241fd241-f011-4e8d-b203-41444e179ce7",
+              "drive": "b!oX3J_rghDkqX4GUHB0ob80HSHyQR8I1OsgNBRE4XnOfHRwpN7HmcQaAhG3DRBa_W",
+              "file": "01J5KQM5QOFKSYPBZCTFBLQXRDN45FGLQR",
+              "table": "{D4281D37-AA24-4141-80F6-95C9765768CC}"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+              "operationId": "GetItems",
+              "connectionName": "shared_excelonlinebusiness"
+            }
+          }
+        },
+        "Join": {
+          "runAfter": {
+            "List_rows_present_in_a_table": [
+              "Succeeded"
+            ]
+          },
+          "type": "Join",
+          "inputs": {
+            "from": "@outputs('List_rows_present_in_a_table')?['body/value']",
+            "joinWith": " "
+          }
+        },
+        "Respond_to_the_agent": {
+          "runAfter": {
+            "Run_a_prompt": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ods": {
+                  "title": "ODS",
+                  "description": "",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "ods": "@{outputs('Run_a_prompt')?['body/responsev2/predictionOutput/text']}"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

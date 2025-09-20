@@ -1,0 +1,8 @@
+kind: AgentDialog
+beginDialog:
+  kind: OnToolSelected
+  id: main
+
+settings: {}
+inputType: {}
+outputType: {}

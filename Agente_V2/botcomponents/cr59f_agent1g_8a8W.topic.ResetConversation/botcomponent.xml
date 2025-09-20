@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr59f_agent1g_8a8W.topic.ResetConversation">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Restablecer conversación</name>
+  <parentbotid>
+    <schemaname>cr59f_agent1g_8a8W</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,133 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25081.234" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25081.00234">
+  <Entities></Entities>
+  <Roles></Roles>
+  <Workflows>
+    <Workflow WorkflowId="{992712fe-d44c-c668-40e7-2913399cb10d}" Name="ODS ODESIA" Description="This flow starts when a manual trigger receives text input. It retrieves rows from a specified table in an Excel file stored on SharePoint. The retrieved data is then combined into a single string. This combined data, along with the original input, is sent to an AI model for processing. After the AI model completes its task, the flow sends a response back to the agent. The flow’s sequence is determined by success conditions, ensuring each step only runs after the previous one has completed successfully.">
+      <JsonFileName>/Workflows/ODSODESIA-992712FE-D44C-C668-40E7-2913399CB10D.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>1</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="ODS ODESIA" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="This flow starts when a manual trigger receives text input. It retrieves rows from a specified table in an Excel file stored on SharePoint. The retrieved data is then combined into a single string. This combined data, along with the original input, is sent to an AI model for processing. After the AI model completes its task, the flow sends a response back to the agent. The flow’s sequence is determined by success conditions, ensuring each step only runs after the previous one has completed successfully." />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{89b1e6dc-00d2-6ff1-d42e-277226d35276}" Name="IAD ODESIA" Description="This flow starts when a manual trigger receives text input. It retrieves rows from a specified Excel table stored in SharePoint, then combines the data into a single string. The combined data and the original input are sent to an AI model for processing. The AI model generates a response based on the provided information. Finally, the flow returns the AI-generated result to the user as the output. The flow’s sequence is determined by success conditions, ensuring each step only runs after the previous one completes successfully.">
+      <JsonFileName>/Workflows/IADODESIA-89B1E6DC-00D2-6FF1-D42E-277226D35276.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>1</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="IAD ODESIA" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="This flow starts when a manual trigger receives text input. It retrieves rows from a specified Excel table stored in SharePoint, then combines the data into a single string. The combined data and the original input are sent to an AI model for processing. The AI model generates a response based on the provided information. Finally, the flow returns the AI-generated result to the user as the output. The flow’s sequence is determined by success conditions, ensuring each step only runs after the previous one completes successfully." />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{9fea2ace-d688-f011-b4cc-000d3a8ba5a9}" Name="ODS ODESIA v2" Description="Este flujo inicia cuando recibe una solicitud manual con un texto. Luego, obtiene todas las filas de una tabla en un archivo de Excel almacenado en SharePoint. Después, combina los datos obtenidos en un solo texto. Ese texto combinado, junto con el texto original de la solicitud, se envía a un servicio de inteligencia artificial para procesarlo. Finalmente, el resultado generado por el servicio se devuelve como respuesta al usuario. Todo el proceso se ejecuta de manera secuencial, asegurando que cada paso dependa del éxito del anterior.">
+      <JsonFileName>/Workflows/ODSODESIAv2-9FEA2ACE-D688-F011-B4CC-000D3A8BA5A9.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>1</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="ODS ODESIA v2" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Este flujo inicia cuando recibe una solicitud manual con un texto. Luego, obtiene todas las filas de una tabla en un archivo de Excel almacenado en SharePoint. Después, combina los datos obtenidos en un solo texto. Ese texto combinado, junto con el texto original de la solicitud, se envía a un servicio de inteligencia artificial para procesarlo. Finalmente, el resultado generado por el servicio se devuelve como respuesta al usuario. Todo el proceso se ejecuta de manera secuencial, asegurando que cada paso dependa del éxito del anterior." />
+      </Descriptions>
+    </Workflow>
+    <Workflow WorkflowId="{47222262-d176-060f-5ae1-1c11364e1cd6}" Name="IAD ODESIA v2" Description="Este flujo inicia cuando recibe una solicitud manual con un texto. Luego, obtiene todas las filas de una tabla en un archivo de Excel almacenado en SharePoint. Después, combina los datos de esas filas en un solo texto. Utiliza ese texto combinado junto con la entrada original para hacer una predicción usando inteligencia artificial. Finalmente, responde con el resultado de la predicción al usuario que hizo la solicitud. Todo el proceso es automático y secuencial, facilitando la integración de datos y la generación de respuestas inteligentes.">
+      <JsonFileName>/Workflows/IADODESIAv2-47222262-D176-060F-5AE1-1C11364E1CD6.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>1</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="IAD ODESIA v2" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description languagecode="1033" description="Este flujo inicia cuando recibe una solicitud manual con un texto. Luego, obtiene todas las filas de una tabla en un archivo de Excel almacenado en SharePoint. Después, combina los datos de esas filas en un solo texto. Utiliza ese texto combinado junto con la entrada original para hacer una predicción usando inteligencia artificial. Finalmente, responde con el resultado de la predicción al usuario que hizo la solicitud. Todo el proceso es automático y secuencial, facilitando la integración de datos y la generación de respuestas inteligentes." />
+      </Descriptions>
+    </Workflow>
+  </Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

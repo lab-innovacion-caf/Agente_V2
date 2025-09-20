@@ -1,0 +1,14 @@
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: text
+
+modelDescription: ODESIA
+outputs:
+  - propertyName: iad
+
+action:
+  kind: InvokeFlowTaskAction
+  flowId: 89b1e6dc-00d2-6ff1-d42e-277226d35276
+
+outputMode: All

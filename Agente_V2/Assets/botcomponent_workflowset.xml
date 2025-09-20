@@ -1,0 +1,17 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="cr59f_odesia.action.IADODESIA" workflowid.workflowid="89b1e6dc-00d2-6ff1-d42e-277226d35276">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr59f_odesia.action.ODSODESIA" workflowid.workflowid="992712fe-d44c-c668-40e7-2913399cb10d">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr59f_odesia.topic.ConversationStart" workflowid.workflowid="89b1e6dc-00d2-6ff1-d42e-277226d35276">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr59f_odesia.topic.IAD" workflowid.workflowid="47222262-d176-060f-5ae1-1c11364e1cd6">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr59f_odesia.topic.ODS" workflowid.workflowid="9fea2ace-d688-f011-b4cc-000d3a8ba5a9">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>

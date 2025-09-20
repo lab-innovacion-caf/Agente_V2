@@ -1,0 +1,8 @@
+kind: TaskDialog
+modelDisplayName: ODESIA
+modelDescription: ODESIA es una herramienta inteligente diseñada para facilitar la gestión y análisis de los Objetivos de Desarrollo Sostenible (ODS) y los Indicadores de Aporte al Desarrollo (IAD). Su propósito principal es ayudar a los usuarios a identificar y relacionar los objetivos y los indicadores de desarrollo en diversos textos y proyectos.
+action:
+  kind: InvokeConnectedAgentTaskAction
+  botSchemaName: cr59f_odesia
+  historyType:
+    kind: ConversationHistory

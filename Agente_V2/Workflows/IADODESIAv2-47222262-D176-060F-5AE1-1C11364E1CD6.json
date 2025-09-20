@@ -1,0 +1,148 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedexcelonlinebusiness_451cf"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "impersonation": {},
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_817a0"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Introduzca su entrada",
+                  "title": "raw",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Enumerar_las_filas_de_una_tabla": {
+          "runAfter": {},
+          "metadata": {
+            "01J5KQM5UIJOIR3WWUANDK6IQD24FZWNTX": "/Copilot/ODESIA 1/Base IADs.xlsx",
+            "tableId": "{BF4C1862-71AB-451F-983E-177FC3383DAE}"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "source": "sites/cafbanco.sharepoint.com,fec97da1-21b8-4a0e-97e0-6507074a1bf3,241fd241-f011-4e8d-b203-41444e179ce7",
+              "drive": "b!oX3J_rghDkqX4GUHB0ob80HSHyQR8I1OsgNBRE4XnOfHRwpN7HmcQaAhG3DRBa_W",
+              "file": "01J5KQM5UIJOIR3WWUANDK6IQD24FZWNTX",
+              "table": "{BF4C1862-71AB-451F-983E-177FC3383DAE}"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+              "operationId": "GetItems",
+              "connectionName": "shared_excelonlinebusiness"
+            }
+          }
+        },
+        "Combinación": {
+          "runAfter": {
+            "Enumerar_las_filas_de_una_tabla": [
+              "Succeeded"
+            ]
+          },
+          "type": "Join",
+          "inputs": {
+            "from": "@outputs('Enumerar_las_filas_de_una_tabla')?['body/value']",
+            "joinWith": "\n"
+          }
+        },
+        "Ejecutar_una_solicitud": {
+          "runAfter": {
+            "Combinación": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "recordId": "28e3b39e-d661-40b8-abe5-0a9f56d40b75",
+              "item/requestv2/raw": "@triggerBody()?['text']",
+              "item/requestv2/JSON": "@body('Combinación')"
+            },
+            "host": {
+              "apiId": "providers/Microsoft.ProcessSimple/operationGroups/aibuilder",
+              "operationId": "aibuilderpredict_customprompt",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        },
+        "Responder_al_agente": {
+          "runAfter": {
+            "Ejecutar_una_solicitud": [
+              "Succeeded"
+            ]
+          },
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "iad": {
+                  "title": "IAD",
+                  "description": "",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "iad": "@{outputs('Ejecutar_una_solicitud')?['body/responsev2/predictionOutput']}"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

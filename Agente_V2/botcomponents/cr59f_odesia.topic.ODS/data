@@ -1,0 +1,37 @@
+kind: AdaptiveDialog
+modelDescription: ODS
+beginDialog:
+  kind: OnActivity
+  id: main
+  type: Invoke
+  actions:
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_bqPlln
+      input:
+        binding:
+          text: =Global.Raw.text
+
+      output:
+        binding:
+          ods: Topic.ODS
+
+      flowId: 9fea2ace-d688-f011-b4cc-000d3a8ba5a9
+
+    - kind: InvokeAIBuilderModelAction
+      id: invokeAIBuilderModelAction_3Ltvis
+      input:
+        binding:
+          Table: =Topic.ODS
+
+      output:
+        binding:
+          predictionOutput: Topic.Var2
+
+      aIModelId: a38b7315-59b4-40a3-a6c4-9e8f78c22364
+
+    - kind: SendActivity
+      id: sendActivity_bTGEUu
+      activity: "{Topic.Var2.text}"
+
+inputType: {}
+outputType: {}

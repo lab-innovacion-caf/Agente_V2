@@ -1,0 +1,91 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Hola, soy {System.Bot.Name}tu herramienta inteligente que te ayuda a identificar los Objetivos de Desarrollo Sostenible e Indicadores de Aportes al Desarrollo, de acuerdo con el objetivo que me des de una operación.
+        speak:
+          - Hola y gracias por llamar a {System.Bot.Name}. Tenga en cuenta que algunas respuestas se generan mediante IA y puede ser necesario comprobar su precisión. ¿En qué puedo ayudarle?
+
+    - kind: Question
+      id: question_3GdGsd
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: En que te gustaria trabajar hoy?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Analiza ODS
+              displayName: Analiza ODS
+
+            - id: Analiza IAD
+              displayName: Analiza IAD
+
+            - id: ODS & IAD
+              displayName: ODS & IAD
+
+    - kind: ConditionGroup
+      id: conditionGroup_YwMAKi
+      conditions:
+        - id: conditionItem_UExzBY
+          condition: =Topic.Var1 = 'cr59f_odesia.topic.ConversationStart.main.question_3GdGsd'.'Analiza ODS'
+          actions:
+            - kind: BeginDialog
+              id: KVOTif
+              dialog: cr59f_odesia.topic.ODSOrq
+
+        - id: conditionItem_J7znNF
+          condition: =Topic.Var1 = 'cr59f_odesia.topic.ConversationStart.main.question_3GdGsd'.'Analiza IAD'
+          actions:
+            - kind: BeginDialog
+              id: fotntP
+              dialog: cr59f_odesia.topic.IAD
+
+        - id: conditionItem_dSsHyv
+          condition: =Topic.Var1 = 'cr59f_odesia.topic.ConversationStart.main.question_3GdGsd'.'ODS & IAD'
+          actions:
+            - kind: BeginDialog
+              id: dM33Nc
+              dialog: cr59f_odesia.topic.ODSOrq
+
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_qjR009
+              input:
+                binding:
+                  text: =Global.Raw.text
+
+              output:
+                binding:
+                  iad: Topic.IAD
+
+              flowId: 89b1e6dc-00d2-6ff1-d42e-277226d35276
+
+            - kind: InvokeAIBuilderModelAction
+              id: invokeAIBuilderModelAction_Jo87dI
+              input:
+                binding:
+                  Table: =Topic.IAD
+
+              output:
+                binding:
+                  predictionOutput: Topic.Var2
+
+              aIModelId: a38b7315-59b4-40a3-a6c4-9e8f78c22364
+
+            - kind: SendActivity
+              id: sendActivity_Y6bSMd
+              activity: |-
+                Estos fueron los IAD que identifique: 
+
+                {Topic.Var2.text}
+
+    - kind: CancelAllDialogs
+      id: IyA3Np

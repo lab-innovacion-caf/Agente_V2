@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr59f_odesia.action.IADODESIA">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>IAD ODESIA</name>
+  <parentbotid>
+    <schemaname>cr59f_odesia</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

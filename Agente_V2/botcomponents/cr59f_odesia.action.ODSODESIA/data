@@ -1,0 +1,10 @@
+kind: TaskDialog
+modelDescription: ODESIA
+outputs:
+  - propertyName: ods
+
+action:
+  kind: InvokeFlowTaskAction
+  flowId: 992712fe-d44c-c668-40e7-2913399cb10d
+
+outputMode: All

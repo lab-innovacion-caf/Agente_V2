@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr59f_odesia.topic.StartOver">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Volver a empezar</name>
+  <parentbotid>
+    <schemaname>cr59f_odesia</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr59f_odesia.topic.ThankYou">
+  <componenttype>9</componenttype>
+  <description>Este tema se desencadena cuando el usuario da las gracias.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Agradecimiento</name>
+  <parentbotid>
+    <schemaname>cr59f_odesia</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
