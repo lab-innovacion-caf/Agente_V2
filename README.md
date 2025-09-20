@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
+  <img src="./banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
 # 🤖 Agente de Normativas CAF
